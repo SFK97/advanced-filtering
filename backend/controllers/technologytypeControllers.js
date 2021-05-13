@@ -1,17 +1,23 @@
 const TechnologyType = require("../models/TechnologyType");
+const asyncHandler = require("../middleware/asyncHandler");
 
-exports.getAllTechnologyTypes = (req, res, next) => {
-  res.send("Get all TechnologyTypes route");
-};
+exports.getAllTechnologyTypes = asyncHandler(async (req, res, next) => {
+  const technologytype = await TechnologyType.find(); //Send query to mongoDB database
 
-exports.createNewTechnologyType = (req, res, next) => {
+  res.status(200).json({
+    success: true,
+    data: technologytype,
+  });
+});
+
+exports.createNewTechnologyType = asyncHandler(async (req, res, next) => {
   res.send("Create new TechnologyTypes route");
-};
+});
 
-exports.updateTechnologyTypeById = (req, res, next) => {
+exports.updateTechnologyTypeById = asyncHandler(async (req, res, next) => {
   res.send("Update a TechnologyType by id route");
-};
+});
 
-exports.deleteTechnologyTypeById = (req, res, next) => {
+exports.deleteTechnologyTypeById = asyncHandler(async (req, res, next) => {
   res.send("Delete a TechnologyType by id route");
-};
+});
