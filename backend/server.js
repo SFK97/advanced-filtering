@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 //Routes
-app.use("/api/v1/technologytype", require("./routes/technologytypeRoutes"));
+app.use("/api/v1/technologytypes", require("./routes/technologytypeRoutes"));
 
 //Error Handler
 app.use(errorHandler);

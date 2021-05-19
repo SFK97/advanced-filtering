@@ -1,8 +1,17 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TechnologyPage from "./pages/TechnologyPage";
+import Navbar from "./components/Navbar";
+
 const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Navbar />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={TechnologyPage} />
+        </Switch>
+      </Router>
+    </>
   );
 };
 

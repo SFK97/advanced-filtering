@@ -31,11 +31,11 @@ exports.getAllTechnologyTypes = asyncHandler(async (req, res, next) => {
     query = query.sort("-price");
   }
 
-  const technologytype = await query; //Send query to mongoDB database
+  const technologytypes = await query; //Send query to mongoDB database
 
   res.status(200).json({
     success: true,
-    data: technologytype,
+    data: technologytypes,
   });
 });
 
